@@ -1,0 +1,42 @@
+package GraphTraversals;
+import java.util.ArrayList;
+import java.util.LinkedList;
+
+import UninformedSearch.Graph;
+public class Traversal {
+		
+	  
+	  ArrayList<Integer> dfstraversalofgraph(int target,Graph g) {
+		  int i;
+		  int[] visited = new int[g.getnumofvertices()+1];
+		  ArrayList<Integer> arrstore = new ArrayList<Integer>();
+		  for(i=1;i<=g.getnumofvertices();i++) {
+			  if(visited[i]==0) {
+				  dfshelper(target,i,arrstore,g.adjlist,visited);
+			  }
+		  }
+		  return arrstore;
+	  }
+
+	private void dfshelper(int target, int i, ArrayList<Integer> arrstore, LinkedList<Integer>[] adjlist, int[] visited) {
+		arrstore.add(i);
+		visited[i]=1;
+		if(visited[i]==target) {
+			return;
+		}
+		for(int it : adjlist[i]) {
+			if(visited[it]==0)
+				dfshelper(it,i,arrstore,adjlist,visited);
+		}
+	}
+	  
+	public static void main(String[]args) {
+		Graph g = new Graph(2);
+		g.userInput();
+		for(int i=0;i<g.adjlist.length;i++) {
+			if(g.adjlist[i]!=null)
+				System.out.println(i+","+g.adjlist[i].toString());
+		}
+		System.out.println();
+	}
+}

@@ -1,0 +1,3 @@
+INDEX VERSION 1.131+C:\Users\USER\eclipse-workspace\Artificial Intelligence\.metadata\.plugins\org.eclipse.jdt.core
+721578894.index
+1049969477.index

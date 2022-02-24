@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename field &apos;graphvertex&apos; in &apos;UninformedSearch.Graph&apos; to &apos;adjlist&apos;&#x0D;&#x0A;- Original project: &apos;Assignment#1&apos;&#x0D;&#x0A;- Original element: &apos;UninformedSearch.Graph.graphvertex&apos;&#x0D;&#x0A;- Renamed element: &apos;UninformedSearch.Graph.adjlist&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" delegate="false" deprecate="false" description="Rename field &apos;graphvertex&apos;" flags="589830" getter="false" id="org.eclipse.jdt.ui.rename.field" input="/src&lt;UninformedSearch{Graph.java[Graph^graphvertex" name="adjlist" references="true" setter="false" stamp="1645714179867" textual="false" version="1.0"/>
+</session>

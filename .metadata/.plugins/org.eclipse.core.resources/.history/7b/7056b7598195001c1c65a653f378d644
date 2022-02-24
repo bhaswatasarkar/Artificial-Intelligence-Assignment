@@ -1,0 +1,10 @@
+package GraphTraversals;
+import UninformedSearch.Graph;
+public class Traversal {
+		
+	  
+	  int[] Bfs(Graph g) {
+		  int[] visited = new int[g.getnumofvertices()];
+	  }
+	
+}

@@ -1,0 +1,48 @@
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Scanner;
+
+public class Graph {
+	public ArrayList<LinkedList<Integer>> graph= new ArrayList<LinkedList<Integer>>();
+	public int numofvertices;
+	
+	Graph(int numofvertices){
+		int i;
+		this.numofvertices = numofvertices;
+		graph = new ArrayList<>(numofvertices);
+		for(i=0;i<numofvertices;i++) {
+			System.out.print(graph.get(i));
+		}
+	}
+	
+	void userInput() {
+		String str = null;
+		String vertex_edge[] = new String[2];
+		int vertex,edge;
+		Scanner sc = new Scanner(System.in);
+		while(str!="end") {
+			System.out.println("Enter vertex,edge pair");
+			str = sc.nextLine();
+			vertex_edge = str.split(",");
+			vertex = Integer.parseInt(vertex_edge[0]);
+			edge = Integer.parseInt(vertex_edge[1]);
+			
+			LinkedList<Integer> edgelist = null;
+			if(graph.get(vertex)!=null)edgelist=graph.get(vertex);
+			edgelist.add(edge);
+			graph.set(vertex, edgelist);
+			
+			edgelist = graph.get(edge);
+			edgelist.add(vertex);
+			graph.set(edge, edgelist);
+		}
+	}
+	
+	public static void main(String[]args) {
+		Graph g = new Graph(100);
+		g.userInput();
+		for(int i=0;i<g.graph.size();i++) {
+			g.graph.get(i).toString();
+		}
+	}
+}
